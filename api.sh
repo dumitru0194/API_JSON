@@ -1,10 +1,10 @@
 #!/bin/bash
 
-private_token="UFqNXfzyLZRAiPP3Aefb"
+private_token="Sx7EMNvjiP-LHkEPUXb8"
 base_url="http://internal.git.unifun.com/api/v4/groups/72/projects"
 per_page=20
 page=1
-output_file="git2.json"
+output_file="git3.json"
 
 # Create or truncate the output file
 > "$output_file"
