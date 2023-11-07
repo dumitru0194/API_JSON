@@ -5,6 +5,7 @@ base_url="http://internal.git.unifun.com/api/v4/groups/72/projects"
 per_page=20
 page=1
 output_file="git3.json"
+project_ids=()
 
 # Create or truncate the output file
 > "$output_file"
@@ -20,8 +21,18 @@ while true; do
   fi
 
   # Append the data from the current page to the output file
-  echo "$response" >> "$output_file"
+#  echo "$response" >> "$output_file"
+
+  # Extract project IDs and store them in the array
+  project_ids+=($(echo "$response" | jq -r '.[].id'))
 
   # Increment the page number for the next request
   ((page++))
+done
+
+# Loop through project IDs and fetch data
+for id in "${project_ids[@]}"; do
+  project_data=$(curl --header "PRIVATE-TOKEN: $private_token" "http://internal.git.unifun.com/api/v4/projects/$id?statistics=true")
+  echo "$project_data" >> "$output_file"
+  echo "Fetched data for project ID: $id"
 done
