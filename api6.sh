@@ -49,7 +49,7 @@ for id in "${project_ids[@]}"; do
   project_size_bytes=$(echo "$project_data" | jq -r '.statistics.repository_size')
   project_size_human_readable=$(convert_bytes_to_human_readable $project_size_bytes)
 
-  custom_json+='{"id": '$id', "name": "'$project_name'", "repository_size_bytes": '$project_size_bytes', "repository_size_human_readable": "'$project_size_human_readable'"},'
+  custom_json+='{"name": "'$project_name'", "repository_size": "'$project_size_human_readable'"},'
 done
 
 # Remove the trailing comma and close the JSON array
@@ -59,3 +59,4 @@ custom_json="${custom_json%,}]"
 echo "$custom_json" > "$output_file"
 
 echo "Custom JSON data has been created and saved to $output_file."
+git add git3_custom.json;git commit -m "Update of git3_custom.json";git push origin master
