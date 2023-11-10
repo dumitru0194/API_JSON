@@ -53,7 +53,7 @@ for ((i = 0; i < total_projects; i++)); do
   project_name=$(echo "$project_data" | jq -r '.name')
   project_size_bytes=$(echo "$project_data" | jq -r '.statistics.repository_size')
   project_size_human_readable=$(convert_bytes_to_human_readable $project_size_bytes)
-  last_activity_at=$(echo "$project_data" | jq -r '.last_activity_at' | date -f - +"%Y-%m-%d %H:%M:%S")
+  last_activity_at=$(echo "$project_data" | jq -r '.last_activity_at' | date -f - +"%Y-%m-%d")
 
   custom_json+='{"Hosts": "'$project_name'", "Repository_Size": "'$project_size_human_readable'", "last_activity": "'$last_activity_at'"},'
 
