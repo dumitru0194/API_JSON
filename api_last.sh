@@ -55,7 +55,7 @@ for ((i = 0; i < total_projects; i++)); do
   project_size_human_readable=$(convert_bytes_to_human_readable $project_size_bytes)
   last_activity_at=$(echo "$project_data" | jq -r '.last_activity_at' | date -f - +"%Y-%m-%d %H:%M:%S")
 
-  custom_json+='{"id": '$id', "name": "'$project_name'", "last_activity_at": "'$last_activity_at'", "repository_size_human_readable": "'$project_size_human_readable'"},'
+  custom_json+='{"Hosts": "'$project_name'", "Repository_Size": "'$project_size_human_readable'", "last_activity": "'$last_activity_at'"},'
 
   echo "Processing data for project with ID: $id ($((i + 1))/$total_projects)"
 done
