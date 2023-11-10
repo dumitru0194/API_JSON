@@ -1,0 +1,19 @@
+[
+    {
+        "config_directories": [
+            "/SCRIPTS/",
+            "/etc/",
+            "/usr/local/nagios/"
+        ],
+        "ignore_directories": "/etc/webmin/\n/etc/KANNEL/bin/\n/etc/KANNEL/include/\n/etc/KANNEL/lib/\n/etc/KANNEL/sbin/\n/etc/KANNEL/share/\n/etc/selinux/targeted/\n/etc/udev/\n/www/ussd/vendor/\naf-"
+    },
+    {
+        "config_directories": [
+            "/SCRIPTS/",
+            "/etc/",
+            "/usr/local/nagios/",
+            "/www/balance/"
+        ],
+        "ignore_directories": "/etc/webmin/\n/etc/KANNEL/bin/\n/etc/KANNEL/include/\n/etc/KANNEL/lib/\n/etc/KANNEL/sbin/\n/etc/KANNEL/share/\n/etc/selinux/targeted/\n/etc/udev/\n/www/ussd/vendor/\n/www/balance/.git/"
+    }
+]
