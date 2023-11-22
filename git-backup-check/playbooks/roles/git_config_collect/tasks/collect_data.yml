@@ -1,0 +1,46 @@
+# git_config_collect/tasks/collect_data.yml
+
+---
+- name: Collect data from servers
+  block:
+    - name: Get git config
+      become_user: root
+      become: true
+      shell: cat /SCRIPTS/GIT/config | grep -v '#'
+      register: command_output_1
+      ignore_errors: yes
+      ignore_unreachable: true
+
+    - name: Get git ignore
+      become_user: root
+      become: true
+      shell: cat /SCRIPTS/GIT/ignor_list | grep -v '#'
+      register: command_output_2
+      ignore_errors: yes
+      ignore_unreachable: true
+
+    - name: Print command_output_1.rc for debugging
+      debug:
+        msg: "Value of command_output_1.rc is {{ command_output_1.rc }}"
+      ignore_errors: yes
+      ignore_unreachable: true
+
+    - name: Capture command output
+      set_fact:
+        command_output_text_1: "{{ 'unreachable' if command_output_1 is failed or command_output_1.rc is not defined or command_output_1.rc != 0 else command_output_1.stdout }}"
+      ignore_errors: yes
+      ignore_unreachable: true
+
+    - name: Capture command output
+      set_fact:
+        command_output_text_2: "{{ 'unreachable' if command_output_2 is failed or command_output_2.rc is not defined or command_output_2.rc != 0 else command_output_2.stdout }}"
+      ignore_errors: yes
+      ignore_unreachable: true
+
+    - name: Save results to file
+      local_action:
+        module: lineinfile
+        dest: "{{role_path}}/{{ result_stage2_json }}"
+        line: "{{ { 'Hosts': inventory_hostname, 'Backup': command_output_text_1 | default('NULL'), 'Ignore': command_output_text_2 | default('NULL') } | to_json }}"
+      ignore_errors: yes
+      ignore_unreachable: false

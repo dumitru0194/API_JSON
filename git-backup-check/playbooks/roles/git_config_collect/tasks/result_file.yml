@@ -1,0 +1,39 @@
+# git_config_collect/tasks/result_file.yml
+
+---
+- name: Create local result file
+  tags: file_create
+  delegate_to: localhost
+  run_once: true
+  when: stage == 'create_file'
+  block:
+    - name: Clear result file if present
+      ignore_errors: yes
+      file:
+        path: "{{ role_path }}/{{ result_stage2_json }}"
+        state: absent
+      tags: file_create
+
+    - name: Create new result file
+      ignore_errors: no
+      file:
+        path: "{{role_path}}/{{ result_stage2_json }}"
+        state: touch
+      tags: file_create
+
+- name: Processing result files from step_1 and step_2
+  tags: process_file
+  delegate_to: localhost
+  run_once: true
+  when: stage == 'process_file'
+  block:
+    - name: Python script to convert output data
+      shell: cd "{{ role_path }}/handlers"  && /bin/python3 "{{ git_status_nice_json_parser }}"
+      args:
+        executable: /bin/bash
+      tags: process_file
+    - name: Jq command to connect json result files
+      shell: /bin/bash -c "jq '[JOIN(INDEX(input[]; .Hosts); .[]; .Hosts; add)]' {{ result_stage1_json }} {{role_path}}/{{ result_stage2_json }} > {{ result_final }}"
+      args:
+        executable: /bin/bash
+      tags: process_file

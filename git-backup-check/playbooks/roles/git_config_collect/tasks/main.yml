@@ -1,0 +1,33 @@
+# git_config_collect/tasks/main.yml
+
+---
+#- name: Use the captured output in another role
+#  include_role:
+#    name: git_config_web
+#  vars:
+#    result_stage1_json:     "{{ result_stage1_json_stdout.stdout }}"
+#    hosts_file:             "{{ hosts_file_stdout.stdout }}"
+
+#- name: Reading hosts file content
+#  set_fact:
+#    hosts_content: "{{ lookup('file', hosts_file) }}"
+
+- name: Transfer variables from web role
+  set_fact:
+    hosts_file: "{{ hostvars.localhost.hosts_file }}"
+    result_stage1_json: "{{ hostvars.localhost.result_stage1_json }}"
+
+- name: Process data for each host
+  block:
+    - name: git_config_collect - Include result file creation
+      include_tasks: 'result_file.yml'
+      vars:
+        stage: create_file
+
+    - name: Collect data from servers and store it to variables
+      include_tasks: 'collect_data.yml'
+
+    - name: git_config_collect - Include result file creation
+      include_tasks: 'result_file.yml'
+      vars:
+        stage: process_file

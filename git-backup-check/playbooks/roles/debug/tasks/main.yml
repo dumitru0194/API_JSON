@@ -1,0 +1,17 @@
+- name: Print debug information
+  run_once: yes
+  delegate_to: localhost
+  block:
+    - name: Transfer variables
+      set_fact:
+        hosts_file: "{{ hostvars.localhost.hosts_file }}"
+        result_stage1_json: "{{ hostvars.localhost.result_stage1_json }}"
+
+    - name: Print the value of result_stage1_json in debug role
+      debug:
+        var: result_stage1_json
+
+    - name: Print the value of hosts_file in debug role
+      debug:
+        var: hosts_file
+

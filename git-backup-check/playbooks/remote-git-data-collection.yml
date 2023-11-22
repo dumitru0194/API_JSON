@@ -1,0 +1,22 @@
+---
+- name: Collect status of git backup on servers
+  hosts: "localhost"
+  roles:
+    - git_config_web		# collect data from git web api; git_config_collect is runing after gatheringgg new hosts
+
+- name: Add new hosts dynamically
+  hosts: "localhost"
+  gather_facts: false
+  tasks:
+    - name: Add new hosts to dynamic_group
+      add_host:
+        name: "{{ item }}"
+        groups: "dynamic_group"
+      loop: "{{ lookup('file', hosts_file).splitlines() }}"
+
+- name: Run data collectio on dynamically added hosts
+  hosts: "dynamic_group"
+  gather_facts: false
+  roles:
+#      - debug
+     - git_config_collect	# on every server from dynamic collect config data
