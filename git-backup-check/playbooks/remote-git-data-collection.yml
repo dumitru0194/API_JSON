@@ -2,7 +2,7 @@
 - name: Collect status of git backup on servers
   hosts: "localhost"
   roles:
-    - git_config_web		# collect data from git web api; git_config_collect is runing after gatheringgg new hosts
+    - GitLab_API_data_collection		# collect data from git web api; git_config_collect is runing after gatheringgg new hosts
 
 - name: Add new hosts dynamically
   hosts: "localhost"

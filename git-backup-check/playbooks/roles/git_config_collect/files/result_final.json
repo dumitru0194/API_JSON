@@ -369,9 +369,7 @@
     "Repository_Size": "7MB",
     "last_activity": "2023-11-21",
     "Host exists": "yes",
-    "Backup Description": "",
-    "Ignore": "/etc/webmin/\n/etc/KANNEL/bin/\n/etc/KANNEL/include/\n/etc/KANNEL/lib/\n/etc/KANNEL/sbin/\n/etc/KANNEL/share/\n/etc/selinux/targeted/\n/etc/udev/\n/www/ussd/vendor/",
-    "Backup": "/SCRIPTS/\n/etc/\n/usr/local/nagios/"
+    "Backup Description": ""
   },
   {
     "Hosts": "md-sk-storage-01",
@@ -443,7 +441,7 @@
     "Host exists": "yes",
     "Backup Description": "",
     "Ignore": "/etc/webmin/\n/etc/KANNEL/bin/\n/etc/KANNEL/include/\n/etc/KANNEL/lib/\n/etc/KANNEL/sbin/\n/etc/KANNEL/share/\n/etc/selinux/targeted/\n/etc/udev/\n/www/ussd/vendor/",
-    "Backup": "/SCRIPTS/\n/etc/\n/usr/local/nagios/"
+    "Backup": "unreachable"
   },
   {
     "Hosts": "af-etisalat-dynamic-ivr-04",
@@ -1207,7 +1205,7 @@
     "Host exists": "yes",
     "Backup Description": "",
     "Ignore": "/etc/webmin/\n/etc/KANNEL/bin/\n/etc/KANNEL/include/\n/etc/KANNEL/lib/\n/etc/KANNEL/sbin/\n/etc/KANNEL/share/\n/etc/selinux/targeted/\n/etc/udev/\n/www/ussd/vendor/",
-    "Backup": "/SCRIPTS/\n/etc/\n/usr/local/nagios/\n/www/balance/\n/opt/asterisk16_wv_1/etc/asterisk/"
+    "Backup": "unreachable"
   },
   {
     "Hosts": "bh-zain-balance-02",
@@ -1339,7 +1337,7 @@
     "last_activity": "2023-11-21",
     "Host exists": "yes",
     "Backup Description": "",
-    "Ignore": "/etc/webmin/\n/etc/KANNEL/bin/\n/etc/KANNEL/include/\n/etc/KANNEL/lib/\n/etc/KANNEL/sbin/\n/etc/KANNEL/share/\n/etc/selinux/targeted/\n/etc/udev/\n/www/ussd/vendor/\n/SCRIPTS/VM/Api/Provisioning/vendor/psr/container/.git*\n/SCRIPTS/VM/Api/Provisioning/vendor/psr/http-factory/.git*\n/SCRIPTS/VM/Api/Provisioning/vendor/fig/http-message-util/.git*\n/SCRIPTS/VM/Api/Provisioning/vendor/nikic/fast-route/.git*",
+    "Ignore": "unreachable",
     "Backup": "/SCRIPTS/\n/etc/\n/usr/local/nagios/\n/var/spool/cron/"
   },
   {
@@ -1916,7 +1914,7 @@
   {
     "Hosts": "unfn-ami-crm-02",
     "Repository_Size": "52MB",
-    "last_activity": "2023-11-21",
+    "last_activity": "2023-11-22",
     "Host exists": "yes",
     "Backup Description": "",
     "Ignore": "/etc/webmin/\n/etc/KANNEL/bin/\n/etc/KANNEL/include/\n/etc/KANNEL/lib/\n/etc/KANNEL/sbin/\n/etc/KANNEL/share/\n/etc/selinux/targeted/\n/etc/udev/\n/www/ussd/vendor/\n/SCRIPTS/Bitrix_Scripts/vendor/php-di/*\n/SCRIPTS/Bitrix_Scripts/.git*\n/SCRIPTS/Bitrix_Scripts/vendor/unifunbpa/bitrix-base/.git*\n/SCRIPTS/Bitrix_Scripts/vendor/unifunbpa/bitrix-integrations/.git*\n/SCRIPTS/Bitrix_Scripts/vendor/unifunbpa/bitrix-conf/.git*\n/SCRIPTS/Bitrix_Scripts/vendor/unifun/database/.git*\n/SCRIPTS/Bitrix_Scripts/vendor/unifun/logger/.git*\n/SCRIPTS/Bitrix_Scripts/vendor/unifun/http-client/.git*\n/SCRIPTS/Bitrix_Scripts/vendor/unifun/repository-bundle/.git*\n/SCRIPTS/Bitrix_Scripts/vendor/swiftmailer/swiftmailer/.git*\n/SCRIPTS/Bitrix_Scripts/vendor/psr/container/.git*\n/SCRIPTS/Bitrix_Scripts/vendor/symfony/deprecation-contracts/.git*\n/SCRIPTS/Bitrix_Scripts/vendor/guzzlehttp/psr7/.git*\n/SCRIPTS/AccountManagerInterface/Exports/*\n/SCRIPTS/AccountManagerInterface/uploads/spam_auto_generated_uploads/*\n/SCRIPTS/AccountManagerInterface/uploads/spam_manual_uploads/*\n/SCRIPTS/AccountManagerInterface/uploads/*\n/SCRIPTS/AccountManagerInterface/Template/*\n/SCRIPTS/AccountManagerInterface/Application/Libraries*\n/SCRIPTS/AccountManagerInterface/Template/twig/twig/*\n/SCRIPTS/AccountManagerInterface/CRMUploads/*\n/SCRIPTS/AccountManagerInterface/PY/*\n/SCRIPTS/Bitrix_Scripts_working/vendor/*\n/SCRIPTS/CRMPortal/Promo_Report/*\n/SCRIPTS/CRMPortal/_lib/prod/third/adodb/adodb-time.zip*\n/SCRIPTS/CRMPortal_v1.tar.gz*\n/SCRIPTS/reserve_copy_12.08.21.tgz*\n/SCRIPTS/CRM 19.05.21.tgz*\n/SCRIPTS/CRMPortal/_lib/prod/third/phantomjs/*\n/SCRIPTS/CRMPortal/_lib/prod/third/wkhtmltopdf/*\n/SCRIPTS/Bitrix_Scripts*\n/SCRIPTS/working bitrix_script.tgz\n/SCRIPTS/CRMPortal/25.tgz\n/SCRIPTS/CRMPortal/archive.tgz\n/SCRIPTS/CRMPortal/azi.tgz",
@@ -1959,7 +1957,7 @@
     "Host exists": "yes",
     "Backup Description": "",
     "Ignore": "/etc/webmin/\n/etc/KANNEL/bin/\n/etc/KANNEL/include/\n/etc/KANNEL/lib/\n/etc/KANNEL/sbin/\n/etc/KANNEL/share/\n/etc/selinux/targeted/\n/etc/udev/\n/www/ussd/vendor/\n/SCRIPTS/CallCollectInterface/Template/twig/twig/.gitignore\n/SCRIPTS/CallCollectInterface/Template/twig/twig/ext/twig/.gitignore\n/SCRIPTS/CallCollectInterfaceNew/Template/twig/twig/.gitignore\n/SCRIPTS/CallCollectInterfaceNew/Template/twig/twig/ext/twig/.gitignore",
-    "Backup": "/SCRIPTS/\n/etc/\n/usr/local/nagios/\n/var/spool/cron/\n/var/www/"
+    "Backup": "unreachable"
   },
   {
     "Hosts": "sn-expresso-bulk-02",
@@ -2402,7 +2400,9 @@
     "Repository_Size": "8MB",
     "last_activity": "2023-11-22",
     "Host exists": "yes",
-    "Backup Description": ""
+    "Backup Description": "",
+    "Ignore": "/etc/webmin/\n/etc/KANNEL/bin/\n/etc/KANNEL/include/\n/etc/KANNEL/lib/\n/etc/KANNEL/sbin/\n/etc/KANNEL/share/\n/etc/selinux/targeted/\n/etc/udev/\n/www/ussd/vendor/\n/etc/nginx/",
+    "Backup": "/SCRIPTS/\n/etc/\n/usr/local/nagios/\n/var/www/"
   },
   {
     "Hosts": "md-moldcell-node-01-old",
@@ -2808,7 +2808,7 @@
     "last_activity": "2023-11-21",
     "Host exists": "yes",
     "Backup Description": "",
-    "Ignore": "/etc/webmin/\n/etc/KANNEL/bin/\n/etc/KANNEL/include/\n/etc/KANNEL/lib/\n/etc/KANNEL/sbin/\n/etc/KANNEL/share/\n/etc/selinux/targeted/\n/etc/udev/\n/www/ussd/vendor/\n/var/www/BalancePlus/uploads/\n/var/www/BalancePlus/exports/\n/opt/unifun/unifun-gateway/log/\n/opt/unifun/unifun-gateway/log_old/\n/opt/unifun/sigtran/unifun-gateway/log/*",
+    "Ignore": "unreachable",
     "Backup": "/SCRIPTS/\n/etc/\n/usr/local/nagios/\n/var/spool/cron/crontabs/\n/var/www/\n/opt/unifun/sigtran/unifun-gateway/\n/KANNEL_CONF/\n/www/balance/\n/opt/asterisk16_ivr_1/etc/asterisk/"
   },
   {
@@ -3095,7 +3095,7 @@
     "last_activity": "2023-11-21",
     "Host exists": "yes",
     "Backup Description": "",
-    "Ignore": "unreachable",
+    "Ignore": "/etc/webmin/\n/etc/KANNEL/bin/\n/etc/KANNEL/include/\n/etc/KANNEL/lib/\n/etc/KANNEL/sbin/\n/etc/KANNEL/share/\n/etc/selinux/targeted/\n/etc/udev/\n/www/ussd/vendor/\n/var/www/BeepCallInterfaceZong/exports/\n/SCRIPTS/ftp/Beepcall/ ",
     "Backup": "/SCRIPTS/\n/etc/\n/var/www/\n/var/spool/cron/crontabs/\n/usr/local/nagios/"
   },
   {
@@ -3113,7 +3113,7 @@
     "last_activity": "2023-11-21",
     "Host exists": "yes",
     "Backup Description": "",
-    "Ignore": "unreachable",
+    "Ignore": "/etc/webmin/\n/etc/KANNEL/bin/\n/etc/KANNEL/include/\n/etc/KANNEL/lib/\n/etc/KANNEL/sbin/\n/etc/KANNEL/share/\n/etc/selinux/targeted/\n/etc/udev/\n/www/ussd/vendor/\n/LOGS/\n/var/www/BeepCallInterfaceZong/exports/\n/SCRIPTS/ftp/Beepcall/ ",
     "Backup": "/SCRIPTS/\n/etc/\n/var/www/\n/var/spool/cron/crontabs/\n/usr/local/nagios/"
   },
   {
@@ -3137,7 +3137,9 @@
     "Repository_Size": "5MB",
     "last_activity": "2023-11-22",
     "Host exists": "yes",
-    "Backup Description": ""
+    "Backup Description": "",
+    "Ignore": "/etc/webmin/\n/etc/KANNEL/bin/\n/etc/KANNEL/include/\n/etc/KANNEL/lib/\n/etc/KANNEL/sbin/\n/etc/KANNEL/share/\n/etc/selinux/targeted/\n/etc/udev/\n/www/ussd/vendor/",
+    "Backup": "/SCRIPTS/\n/etc/\n/usr/local/nagios/\n/var/spool/cron/crontabs/"
   },
   {
     "Hosts": "gw3.unifun.com-old",
@@ -3330,7 +3332,7 @@
     "last_activity": "2023-11-21",
     "Host exists": "yes",
     "Backup Description": "",
-    "Ignore": "/etc/webmin/\n/etc/KANNEL/bin/\n/etc/KANNEL/include/\n/etc/KANNEL/lib/\n/etc/KANNEL/sbin/\n/etc/KANNEL/share/\n/etc/selinux/targeted/\n/etc/udev/\n/www/ussd/vendor/\n/SCRIPTS/vasup/interfaces/ICBBroadcaster/Downloads/\n/SCRIPTS/vasup/interfaces/ICBBroadcaster/uploads/\n/SCRIPTS/vasup/interfaces/ICBBroadcaster/exports/\n/SCRIPTS/vasup/.git/\n/SCRIPTS/vasup/.git\n/SCRIPTS/FBII/INTERFACE/SubscriptionControlBeelineUZ_v2/.git*\n/SCRIPTS/FBII/INTERFACE/SubscriptionControlBeelineUZ/.git*\n/opt/unifun/jdk-11.0.12+7-jre/lib/server/libjvm.so\n/opt/unifun/jdk-11.0.12+7-jre/lib/modules",
+    "Ignore": "unreachable",
     "Backup": "/SCRIPTS/\n/etc/\n/var/www/\n/var/spool/cron/crontabs/\n/usr/local/nagios/\n/opt/unifun/\n/KANNEL_CONF/"
   },
   {
@@ -4069,7 +4071,9 @@
     "Repository_Size": "367MB",
     "last_activity": "2023-11-22",
     "Host exists": "yes",
-    "Backup Description": ""
+    "Backup Description": "",
+    "Ignore": "/etc/webmin/\n/etc/KANNEL/bin/\n/etc/KANNEL/include/\n/etc/KANNEL/lib/\n/etc/KANNEL/sbin/\n/etc/KANNEL/share/\n/etc/selinux/targeted/\n/etc/udev/\n/var/lib/asterisk/sounds/FunBox_backup/\n/SCRIPTS/FBII/INTERFACE/SubscriptionControlAzercellAZ/application/logs/\n/SCRIPTS/FBII/INTERFACE/SubscriptionControlAzercellMelomania/application/logs/",
+    "Backup": "/SCRIPTS/\n/etc/\n/var/www/\n/var/spool/cron/\n/usr/local/nagios/\n/KANNEL_CONF/\n/opt/asterisk16/etc/asterisk/"
   },
   {
     "Hosts": "kh-smart-balance-plus-02",
