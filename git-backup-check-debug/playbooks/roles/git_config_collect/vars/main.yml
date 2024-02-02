@@ -1,0 +1,7 @@
+# result files
+result_stage2_json:	"files/git_status_nice.json"
+result_final:		"{{ role_path }}/files/result_final.json"
+
+# Additional scripts
+git_status_nice_json_parser: "git_status_nice.json.parser.py"
+

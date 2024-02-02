@@ -25,7 +25,7 @@ done
 
 # Update/Create Available Hosts File
 mkdir -p ${CONFIG_DIR}
-awk '{print $2}' /etc/ansible/hosts | grep -v '^$' | awk -F'=' '/ansible_host/{print $ 2}'  > ${available_hosts_file}
+awk '{print $2}' /etc/ansible/hosts | grep -v '^$' | awk -F'=' '/ansible_host/{print $ 2}' | grep gwu1 > ${available_hosts_file}
 
 # Uncoment to test mode, should comment awk above.
 #echo "af-etisalat-dynamic-ivr-03" > ${available_hosts_file}
@@ -80,9 +80,8 @@ custom_json='['
 total_projects=${#project_ids[@]}
 echo "Total projects to process: $total_projects" 2>/dev/null 1>&2
 
-#for ((i = 0; i < 3; i++)); do
-
-for ((i = 0; i < total_projects; i++)); do
+i=2706
+# for ((i = 0; i < total_projects; i++)); do
   echo "Processing data for project with ID: $id ($((i + 1))/$total_projects)" 1>&2
   id=${project_ids[i]}
   project_data=$(curl --silent --header "PRIVATE-TOKEN: $private_token" "http://internal.git.unifun.com/api/v4/projects/$id?statistics=true")
@@ -108,7 +107,6 @@ for ((i = 0; i < total_projects; i++)); do
    fi
 
   custom_json+='{"Hosts": "'$project_name'", "Repository_Size": "'$project_size_human_readable'", "last_activity": "'$last_activity_at'", "Host exists": "'$host_exists'", "Backup Description" : "'$description'"},'
-done
 
 # Remove the trailing comma in the custom JSON array
 custom_json="${custom_json%,}"

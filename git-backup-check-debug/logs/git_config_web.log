@@ -1,0 +1,15 @@
+Requesting current 1 page
+Requesting current 2 page
+Requesting current 3 page
+Requesting current 4 page
+Requesting current 5 page
+Requesting current 6 page
+Requesting current 7 page
+All pages processed. Page 6 is the last page.
+Processing data for project with ID:  (2707/513)
+jq: error (at <stdin>:1): Cannot index array with string "name"
+jq: error (at <stdin>:1): Cannot index array with string "statistics"
+jq: error (at <stdin>:1): Cannot index array with string "last_activity_at"
+jq: error (at <stdin>:1): Cannot index array with string "description"
+jq: error (at <stdin>:1): Cannot index array with string "description"
+Custom JSON data for all projects has been created and saved to /SCRIPTS/GITAPI/git-backup-check-debug/playbooks/roles/GitLab_API_data_collection/handlers/.config/git3_custom_all.json

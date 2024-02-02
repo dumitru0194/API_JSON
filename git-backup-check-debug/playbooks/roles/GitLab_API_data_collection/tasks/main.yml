@@ -1,0 +1,74 @@
+# git_config_web/tasks/main.yml
+
+---
+- name: Collect data about configured devices from Git server
+  delegate_to: localhost
+  run_once: true
+  block:
+    - name: Run bash script and get path for hosts file
+      ignore_errors: no
+      args:
+        executable: /bin/bash
+      shell: "/bin/bash -c 'cd {{ role_path }}/handlers && ./api_ifbackup.sh get_hosts 2>{{ role_path }}/../../../logs/git_config_web.log'"
+      register: hosts_file_stdout
+
+    - name: Run bash script and get path for result gitlab file
+      ignore_errors: no
+      args:
+        executable: /bin/bash
+      shell: "/bin/bash -c 'cd {{ role_path }}/handlers && ./api_ifbackup.sh 2>>{{ role_path }}/../../../logs/git_config_web.log'"
+      register: result_stage1_json_stdout
+
+    - set_fact:
+        hosts_file: "{{ hosts_file_stdout.stdout }}"
+        result_stage1_json: "{{ result_stage1_json_stdout.stdout }}"
+
+    - name: Display hosts from file lookup
+      debug:
+        msg: "result_stage1_json: {{ result_stage1_json }}"
+
+    - name: Display hosts from file lookup
+      debug:
+        msg: "hosts_file: {{ hosts_file }}"
+
+
+
+#    - name: Add hosts to inventory
+#      add_host:
+#        name: "{{ item }}"
+#      with_items: "{{ lookup('file', hosts_file).splitlines() }}"
+#      register: added_hosts
+
+#    - name: Debug hosts in the group
+#      debug:
+#        var: groups["dynamic_git_group"]
+
+#    - name: Display hosts from file lookup
+#      debug:
+#        msg: "{{ lookup('file', hosts_file_captured).splitlines() }}"
+
+#    - name: Display hosts from added_hosts
+#      debug:
+#        msg: "{{ added_hosts.results | map(attribute='item') | list }}"
+
+#- name: Process new hosts using git config collect
+#  hosts: dynamic_git_group
+#  block:
+#    - name: Debug message for git_config_collect role
+#      debug:
+#        msg: "Running git_config_collect role on hosts in dynamic_git_group"
+
+#    - name: Include git_config_collect role
+#      include_role:
+#        name: git_config_collect
+#      hosts: dynamic_git_group
+
+
+
+
+
+#- name: Process new hosts using git config collect
+#  hosts: dynamic_git_group
+#  gather_facts: false
+#  roles:
+#    - git_config_collect  # Process new hosts' data

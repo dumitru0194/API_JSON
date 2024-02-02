@@ -255,6 +255,7 @@ et-ethiotelecom-inter-01
 et-ethiotelecom-ivr-01
 et-ethiotelecom-balance-01
 et-ethiotelecom-xen-01
+et-ethiotelecom-xen-02
 ge-beeline-balance-plus-01
 ge-beeline-balance-plus-02
 ge-beeline-service-vasup-01
